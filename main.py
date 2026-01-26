@@ -1,4 +1,5 @@
-import os
+from http.server import BaseHTTPRequestHandler, HTTPServer
+import threadingimport os
 import time
 import requests
 from datetime import datetime
@@ -78,4 +79,16 @@ def main():
         time.sleep(POLL_INTERVAL)
 
 if __name__ == "__main__":
-    main()
+    main()# --- Fly.io Keep-Alive Server ---
+class HealthHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/plain")
+        self.end_headers()
+        self.wfile.write(b"CBB Edge Engine Running")
+
+def start_server():
+    server = HTTPServer(("0.0.0.0", 8080), HealthHandler)
+    server.serve_forever()
+
+threading.Thread(target=start_server, daemon=True).start()
