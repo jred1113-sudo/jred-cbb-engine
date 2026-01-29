@@ -27,12 +27,23 @@ def send_telegram(message):
     requests.post(url, json=payload)
 
 def get_games():
+    if not ODDS_API_KEY:
+        print("ODDS_API_KEY not set")
+        return None
+
+    params = {
+        "apiKey": ODDS_API_KEY,
+        "regions": "us",
+        "markets": "h2h,spreads",
+        "oddsFormat": "american"
+    }
+
     try:
-        r = requests.get(ESPN_SCOREBOARD, timeout=10)
+        r = requests.get(ODDS_ENDPOINT, params=params, timeout=10)
         r.raise_for_status()
         return r.json()
     except Exception as e:
-        print("Fetch error:", e)
+        print("Odds API fetch error:", e)
         return None
 
 def parse_games(data):
