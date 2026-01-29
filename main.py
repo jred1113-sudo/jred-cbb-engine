@@ -10,7 +10,8 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 POLL_INTERVAL = 60  # seconds
 
-ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard"
+ODDS_API_KEY = os.getenv("ODDS_API_KEY")
+ODDS_ENDPOINT = "https://api.the-odds-api.com/v4/sports/basketball_ncaab/odds"
 
 def send_telegram(message):
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
