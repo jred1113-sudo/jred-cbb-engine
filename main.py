@@ -92,6 +92,8 @@ def main():
         time.sleep(POLL_INTERVAL)
 
 if __name__ == "__main__":
+    if __name__ == "__main__":
+    threading.Thread(target=start_server, daemon=True).start()
     main()# --- Fly.io Keep-Alive Server ---
 class HealthHandler(BaseHTTPRequestHandler):
     def do_GET(self):
