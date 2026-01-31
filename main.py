@@ -77,6 +77,8 @@ def parse_games(data):
     return alerts
 
 def main():
+    def main():
+    send_telegram("🚀 CBB Edge Engine STARTED on Fly.io")
     send_telegram("🚀 CBB Engine Online — Live monitoring started")
 
     while True:
