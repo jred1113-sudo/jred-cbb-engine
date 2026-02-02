@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for jred-cbb-engine-lonmww on 2026-02-02T18:43:05Z
+# fly.toml app configuration file generated for jred-cbb-engine-lonmww on 2026-02-02T19:10:08Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = 'jred-cbb-engine-lonmww'
-primary_region = 'ams'
+primary_region = 'iad'
 
 [build]
 
@@ -20,4 +20,4 @@ primary_region = 'ams'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 256
+  memory_mb = 1024
