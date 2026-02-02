@@ -128,7 +128,7 @@ class HealthHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/plain")
         self.end_headers()
-        self.wfile.write(b"CBP Edge Engine Running")
+        self.wfile.write(b"CBB Edge Engine Running")
 
 def start_server():
     server = HTTPServer(("0.0.0.0", 8080), HealthHandler)
