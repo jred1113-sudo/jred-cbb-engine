@@ -108,8 +108,8 @@ def parse_games(data):
 # MAIN LOOP
 # =====================
 def main():
-    print("CBP Edge Engine Running")
-    send_telegram("🟢 CBP Edge Engine is LIVE")
+    print("CBB Edge Engine Running")
+    send_telegram("🟢 CBB Edge Engine is LIVE")
 
     while True:
         data = get_games()
